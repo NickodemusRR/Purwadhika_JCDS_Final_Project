@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ten Year CHD Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body {
+        background-attachment: fixed; 
+        background-size: cover;
+        color: blueviolet;
+        font-family: Segoe UI;
+        text-align: center;
+        vertical-align: middle
+    }
+    form {
+        text-align: right;
+        vertical-align: middle        
+    } 
+    input{
+        border-radius: 4pt;
+        border-width: 2pt;
+        border-color: rgb(221, 232, 247); 
+    }
+    button{
+        background-color: aliceblue;
+        color: darkslategray;
+        border: 2px;
+        border-color: lightsteelblue;
+        border-radius: 5px;} 
+    </style> 
+</head>
+<body> 
+    <img src="{{graphic}}">
+    <h1>{{result}}</h1>
+    <form>
+        <div class="form-group row">
+            <div class="col-sm-6">
+                    <a href="http://localhost:5000/"><input type="Button" value="Home" class="btn btn-secondary"/></a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

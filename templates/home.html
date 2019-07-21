@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ten Year CHD Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body {
+        background-attachment: fixed; 
+        background-size: cover;
+        color: blanchedalmond;
+        font-family: Segoe UI;
+        text-align: center;
+        vertical-align: middle
+    }
+    form {
+        text-align: center;
+        vertical-align: middle        
+    } 
+    input{
+        border-radius: 4pt;
+        border-width: 2pt;
+        border-color: rgb(221, 232, 247); 
+    }
+    button{
+        background-color: aliceblue;
+        color: darkslategray;
+        border: 2px;
+        border-color: lightsteelblue;
+        border-radius: 5px;} 
+    </style> 
+</head>
+<body background="https://ap.rdcpix.com/1123674199/6fa659242cc7020a5f8897ed147e838al-w0xd-w1020_h770_q80.jpg">
+    <h1 style="letter-spacing: 1pt" >LET'S PREDICT YOUR RISK OF GETTING CORONARY HEART DISEASE IN TEN YEARS BASED ON FRAMINGHAM STUDY DATASET!</h1>
+    <br>
+    <form action="http://localhost:5000/" method="POST"> 
+        <div>
+            <input type="text"  name='username' placeholder="username" size="35" autocomplete="off">
+        </div>
+        <br>
+        <div>
+            <input type="password"  name='password' placeholder="password" size="35" autocomplete="off">
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Log in" class="btn btn-success">
+        </div>
+        <br>
+        <div>
+            <label for="signup" style="font-size: large; color: black" >Do not have an account? Let's create new account.</label><br>
+            <a href="http://localhost:5000/signup"><input type="Button" value="Sign Up" id="signup" class="btn btn-primary"/></a>
+            <a href="https://en.wikipedia.org/wiki/Framingham_Heart_Study" target="_blank"><input type="Button" value="More Information" class="btn btn-secondary"/></a>
+        </div>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

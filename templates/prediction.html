@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ten Year CHD Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+    body {
+        background-attachment: fixed; 
+        background-size: cover;
+        color: magenta;
+        font-family: Segoe UI;
+        font-size: 14pt;
+        text-align: center;
+        vertical-align: middle
+    }
+    form {
+        text-align: right;
+        vertical-align: middle        
+    } 
+    input{
+        border-radius: 4pt;
+        border-width: 2pt;
+        border-color: rgb(221, 232, 247); 
+    }
+    button{
+        background-color: aliceblue;
+        color: darkslategray;
+        border: 2px;
+        border-color: lightsteelblue;
+        border-radius: 5px;} 
+    </style> 
+</head>
+<body background="https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2017/1-heartattacks.jpg">
+        <h1 style="letter-spacing: 2pt" >WELCOME {{user.upper()}}, PLEASE INPUT YOUR MEDICAL CONDITION</h1>
+        <fieldset>
+        <form action="http://localhost:5000/result" method="POST">
+            <div class="form-group row">
+                <label for="user" class="col-sm-5 col-form-label">Name: </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="text" name="user" id="user" value="{{user}}" placeholder="{{user}}" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="sex" class="col-sm-5 col-form-label">Sex: </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" id="sex" value="0" required>
+                    <label class="form-check-label" for="sex">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" id="sex" value="1">
+                    <label class="form-check-label" for="sex">Male</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="age" class="col-sm-5 col-form-label">Age: </label>
+                <div class="col-sm-2">
+                    <input name="age" class="form-control" type="number" min="0" placeholder="... years old" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="smoker" class="col-sm-5 col-form-label">Do you smoke regularly? </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="smoker" id="smoker" value="0" checked>
+                    <label class="form-check-label" for="smoker">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="smoker" id="smoker" value="1">
+                    <label class="form-check-label" for="smoker">Yes</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="cigs" class="col-sm-5 col-form-label">How many cigarettes do you smoke each day? </label>
+                <div class="col-sm-2">
+                    <input name="cigs" class="form-control" type="number" min="0" placeholder="... cigarettes" required/>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="BP" class="col-sm-5 col-form-label">Did you have any Blood Pressure Medication? </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="BP" id="BP" value="0" checked>
+                    <label class="form-check-label" for="BP">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="BP" id="BP" value="1">
+                    <label class="form-check-label" for="BP">Yes</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="stroke" class="col-sm-5 col-form-label">Did you have experienced stroke attack? </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="stroke" id="stroke" value="0" checked>
+                    <label class="form-check-label" for="stroke">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="stroke" id="stroke" value="1">
+                    <label class="form-check-label" for="stroke">Yes</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="hyp" class="col-sm-5 col-form-label">Did you have hypertensive history? </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="hyp" id="hyp" value="0" checked>
+                    <label class="form-check-label" for="hyp">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="hyp" id="hyp" value="1">
+                    <label class="form-check-label" for="hyp">Yes</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="dia" class="col-sm-5 col-form-label">Did you have diabetes history? </label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dia" id="dia" value="0" checked>
+                    <label class="form-check-label" for="dia">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="dia" id="dia" value="1">
+                    <label class="form-check-label" for="dia">Yes</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="chol" class="col-sm-5 col-form-label">Total cholesterol level: </label>
+                <div class="col-sm-2">
+                    <input name="chol" class="form-control-range" type="range" value="0"  id="chol" min="100" max="700" oninput="cholOutputId.value = chol.value" required>
+                    <output name="cholOutputName" id="cholOutputId">0</output>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="sysBP" class="col-sm-5 col-form-label">Systolic blood pressure: </label>
+                <div class="col-sm-2">
+                    <input name="sysBP" class="form-control-range" type="range" value="0"  id="sysBP" min="80" max="300" oninput="sysBPOutputId.value = sysBP.value" required>
+                    <output name="sysBPOutputName" id="sysBPOutputId">0</output>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="diaBP" class="col-sm-5 col-form-label">Diastolic blood pressure: </label>
+                <div class="col-sm-2">
+                    <input name="diaBP" class="form-control-range" type="range" value="0"  id="cholIn" min="45" max="145" oninput="diaBPOutputId.value = diaBP.value" required>
+                    <output name="diaBPOutputName" id="diaBPOutputId">0</output>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="BMI" class="col-sm-5 col-form-label">Body Mass Index (BMI): </label>
+                <div class="col-sm-2">
+                    <input name="BMI" class="form-control-range" type="range" value="0"  id="BMI" min="15" max="60" oninput="BMIOutputId.value = BMI.value" required>
+                    <output name="BMIOutputName" id="BMIOutputId">0</output>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="heart" class="col-sm-5 col-form-label">Heart rate: </label>
+                <div class="col-sm-2">
+                    <input name="heart" class="form-control-range" type="range" value="0"  id="heart" min="40" max="145" oninput="heartOutputId.value = heart.value" required>
+                    <output name="heartOutputName" id="heartOutputId">0</output>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="glucose" class="col-sm-5 col-form-label">Glucose level: </label>
+                <div class="col-sm-2">
+                    <input name="glucose" class="form-control-range" type="range" value="0"  id="glucose" min="40" max="400" oninput="glucoseOutputId.value = glucose.value" required>
+                    <output name="glucoseOutputName" id="glucoseOutputId">0</output>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <input type="Submit" value="Predict" class="btn btn-success"/>
+                </div>
+                <div class="col-sm-1">
+                    <input type="Reset" value="Reset" class="btn btn-danger"/>
+                </div>
+                <div class="col-sm-1">
+                    <a href="http://localhost:5000/"><input type="Button" value="Home" class="btn btn-secondary"/></a>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
