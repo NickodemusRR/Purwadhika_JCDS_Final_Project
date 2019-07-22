@@ -11,9 +11,27 @@ Using heart disease dataset from [kaggle.com](https://www.kaggle.com/amanajmera1
 4. Support Vector Machine
 
 to predict from the given condition if the person has a risk of coronary heart disease in the next ten years or not.
+
+Features those I used to make predictions are:
+* currentSmoker: whether or not the patient is current smoker 
+* cigsPerDay: the number of cigarettes that the person smoked on average in one day
+* BPMeds: whether or not the patient was on blood pressure medication
+* prevalentStroke: whether or not the patient had previously had a stroke
+* prevalentHyp: whether or not the patient was hypertensive
+* diabetes: whether or not the patient had diabetes 
+* totChol: total cholesterol level
+* sysBP: systolic blood pressure
+* diaBP: diastolic blood pressure
+* BMI: Body Mass Index
+* heartRate: heart rate
+* glucose: glucose level
+
 Complete step by step process can be seen in [notebook](notebook).
 
-After that I embed the machine learning model into a web app that I build using Flask framework. You can clone this repo and see how the app work by running file [app.py](app.py). I use MongoDB to store the username and password. If you don't have access to MongoDB, you can still play around using [json](dataset/database.json) data that I have already generated. 
+After that, I embed the machine learning model into a web app that I build using Flask framework. You can clone this repo and see how the app work by running file [app.py](app.py). I use MongoDB to store the username and password. If you don't have access to MongoDB, you can still play around using [json](dataset/database.json) data that I have already generated. 
+
+![json](capture/data_json.PNG)
+
 
 These are the screenshot of my web app:
 
