@@ -1,19 +1,17 @@
 from pymongo import MongoClient
 
 server = MongoClient('mongodb://localhost:27017/')
-
 db = server['nrrdb']        
 collection = db['my_database'] 
 
-database = []
-for i in collection.find():
-    my_dict = {
-        'username': i['username'],
-        'password' : i['password']
-    }
-    database.append(my_dict)
-
 def login(username, password):
+    database = []
+    for i in collection.find():
+        my_dict = {
+            'username': i['username'],
+            'password' : i['password']
+        }
+    database.append(my_dict)
     username = username
     password = password
     for i in range(len(database)):
@@ -25,6 +23,13 @@ def login(username, password):
             continue
 
 def signup(username, password):
+    database = []
+    for i in collection.find():
+        my_dict = {
+            'username': i['username'],
+            'password' : i['password']
+        }
+    database.append(my_dict)
     username = username
     password = password
     for i in range(len(database)):

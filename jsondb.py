@@ -1,11 +1,8 @@
 import json
 
-with open('./dataset/database.json') as mydb:
-    database = json.load(mydb)
-
-# print(database)
-
 def login(username, password):
+    with open('./dataset/database.json') as mydb:
+        database = json.load(mydb)
     username = username
     password = password
     for i in range(len(database)):
@@ -17,6 +14,8 @@ def login(username, password):
             continue
 
 def signup(username, password):
+    with open('./dataset/database.json') as mydb:
+        database = json.load(mydb)
     username = username
     password = password
     for i in range(len(database)):

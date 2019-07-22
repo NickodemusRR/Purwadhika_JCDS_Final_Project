@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for, abort
 import requests
-import prediction
-import graph
-import mdb
+import prediction   # file prediction --> package to make prediction
+import graph        # file graph.py --> package to create graphic
+import mdb          # file mdb.py --> package to connect with MongoDB database
 # import jsondb   # using json database
 import mysql.connector
 
@@ -16,6 +16,7 @@ sqldb = mysql.connector.connect(
 )
 mycursor = sqldb.cursor()
 
+# ===== home route ===========================
 @app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'GET':
@@ -30,6 +31,7 @@ def home():
         else:
             return render_template('error_login.html')
 
+# ===== signup route ===========================
 @app.route('/signup', methods=['GET', 'POST'])
 def sign():
     if request.method == 'GET':
@@ -48,10 +50,12 @@ def sign():
         else:
             return render_template('error_signup.html')
 
+# ===== prediction route ===========================
 @app.route('/predict/<string:user>')
 def predict(user):
     return render_template('prediction.html', user=user)
 
+# ===== prediction result route ===========================
 @app.route('/result', methods=['POST'])
 def result():
     body = request.form
@@ -98,6 +102,7 @@ def result():
     sqldb.commit()
     return render_template('result.html', result=result, graphic=graphic)
 
+# ===== error route ===========================
 @app.errorhandler(404)
 def error(error):
     return render_template('error.html')

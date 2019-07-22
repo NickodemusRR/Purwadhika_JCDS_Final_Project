@@ -7,7 +7,7 @@
     body {
         background-attachment: fixed; 
         background-size: cover;
-        color: magenta;
+        color: darkgreen;
         font-family: Segoe UI;
         font-size: 14pt;
         text-align: center;
@@ -30,7 +30,7 @@
         border-radius: 5px;} 
     </style> 
 </head>
-<body background="https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2017/1-heartattacks.jpg">
+<body background="https://ak6.picdn.net/shutterstock/videos/9317606/thumb/1.jpg">
         <h1 style="letter-spacing: 2pt" >WELCOME {{user.upper()}}, PLEASE INPUT YOUR MEDICAL CONDITION</h1>
         <fieldset>
         <form action="http://localhost:5000/result" method="POST">
@@ -121,42 +121,42 @@
             <div class="form-group row">
                 <label for="chol" class="col-sm-5 col-form-label">Total cholesterol level: </label>
                 <div class="col-sm-2">
-                    <input name="chol" class="form-control-range" type="range" value="0"  id="chol" min="100" max="700" oninput="cholOutputId.value = chol.value" required>
+                    <input name="chol" class="form-control-range" type="range" value="0"  id="chol" min="100" max="350" oninput="cholOutputId.value = chol.value" required>
                     <output name="cholOutputName" id="cholOutputId">0</output>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="sysBP" class="col-sm-5 col-form-label">Systolic blood pressure: </label>
                 <div class="col-sm-2">
-                    <input name="sysBP" class="form-control-range" type="range" value="0"  id="sysBP" min="80" max="300" oninput="sysBPOutputId.value = sysBP.value" required>
+                    <input name="sysBP" class="form-control-range" type="range" value="0"  id="sysBP" min="80" max="200" oninput="sysBPOutputId.value = sysBP.value" required>
                     <output name="sysBPOutputName" id="sysBPOutputId">0</output>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="diaBP" class="col-sm-5 col-form-label">Diastolic blood pressure: </label>
                 <div class="col-sm-2">
-                    <input name="diaBP" class="form-control-range" type="range" value="0"  id="cholIn" min="45" max="145" oninput="diaBPOutputId.value = diaBP.value" required>
+                    <input name="diaBP" class="form-control-range" type="range" value="0"  id="cholIn" min="45" max="120" oninput="diaBPOutputId.value = diaBP.value" required>
                     <output name="diaBPOutputName" id="diaBPOutputId">0</output>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="BMI" class="col-sm-5 col-form-label">Body Mass Index (BMI): </label>
                 <div class="col-sm-2">
-                    <input name="BMI" class="form-control-range" type="range" value="0"  id="BMI" min="15" max="60" oninput="BMIOutputId.value = BMI.value" required>
+                    <input name="BMI" class="form-control-range" type="range" value="0"  id="BMI" min="15" max="40" oninput="BMIOutputId.value = BMI.value" required>
                     <output name="BMIOutputName" id="BMIOutputId">0</output>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="heart" class="col-sm-5 col-form-label">Heart rate: </label>
                 <div class="col-sm-2">
-                    <input name="heart" class="form-control-range" type="range" value="0"  id="heart" min="40" max="145" oninput="heartOutputId.value = heart.value" required>
+                    <input name="heart" class="form-control-range" type="range" value="0"  id="heart" min="40" max="120" oninput="heartOutputId.value = heart.value" required>
                     <output name="heartOutputName" id="heartOutputId">0</output>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="glucose" class="col-sm-5 col-form-label">Glucose level: </label>
                 <div class="col-sm-2">
-                    <input name="glucose" class="form-control-range" type="range" value="0"  id="glucose" min="40" max="400" oninput="glucoseOutputId.value = glucose.value" required>
+                    <input name="glucose" class="form-control-range" type="range" value="0"  id="glucose" min="40" max="110" oninput="glucoseOutputId.value = glucose.value" required>
                     <output name="glucoseOutputName" id="glucoseOutputId">0</output>
                 </div>
             </div>
